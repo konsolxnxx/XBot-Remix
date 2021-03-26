@@ -54,7 +54,7 @@ async def speedtst(spd):
     result = test.results.dict()
 
     await spd.edit("`"
-                   "Started at "
+                   "Dimulai pada "
                    f"{result['timestamp']} \n\n"
                    "Download "
                    f"{speed_convert(result['download'])} \n"
@@ -87,8 +87,8 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("`Pinging....`")
     end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    await pong.edit(f"**PONG!! 🍭**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    duration = (end - start).microseconds / 10000
+    await pong.edit(f"**PONG!!**\n**Ping** : %sms\n**Bot Aktif** : {uptime}🕛" % (duration))
 
 
 @register(outgoing=True, pattern="^.pong$")
@@ -97,7 +97,7 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("`gass!`")
     end = datetime.now()
-    duration = (end - start).microseconds / 9000
+    duration = (end - start).microseconds / 10000
     await pong.edit("`Ping!\n%sms`" % (duration))
 
 
@@ -107,15 +107,15 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("`Croots!`")
     end = datetime.now()
-    duration = (end - start).microseconds / 9000
+    duration = (end - start).microseconds / 10000
     await pong.edit("**CROOTSS!\n%sms**" % (duration))
 
 
 CMD_HELP.update(
-    {"ping": "`.ping`\
-    \nUsage: Shows how long it takes to ping your bot.\
+    {"ping": "`.ping` atau `.pink`\
+    \nUsage: Menunjukkan berapa lama waktu yang dibutuhkan untuk melakukan ping ke bot Anda.\
     \n\n`.speed`\
-    \nUsage: Does a speedtest and shows the results.\
+    \nUsage: Melakukan speedtest dan menunjukkan hasilnya.\
     \n\n`.pong`\
-    \nUsage: Shows how long it takes to ping your bot."
+    \nUsage: Menunjukkan berapa lama waktu yang dibutuhkan untuk melakukan ping ke bot Anda."
      })
